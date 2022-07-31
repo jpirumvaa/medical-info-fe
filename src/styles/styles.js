@@ -11,7 +11,7 @@ export const classes = {
     formTitle: {
         fontSize: 30,
         fontWeight: 'bold',
-        marginBottom: 20,
+        marginBottom: 10,
         padding: 10,
     },
     formWrapper: {
@@ -66,7 +66,7 @@ export const classes = {
     },
     customInputWrapper: {
         display: 'flex',
-        margin: '0 40px 30px 40px',
+        margin: '0 40px 20px 40px',
 
     },
     customCheckboxWrapper: {

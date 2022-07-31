@@ -19,6 +19,10 @@ input:focus {
   outline: none;
 }
 
+select:focus {
+  outline: none;
+}
+
 .linkbtn:hover {
   cursor: pointer;
   text-decoration: underline;
