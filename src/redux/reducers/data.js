@@ -4,7 +4,7 @@ const initialState = {
     message: null,
     error: null,
     loading: false,
-    data: null
+    data: []
 };
 
 export default function dataReducer(state = initialState, action) {

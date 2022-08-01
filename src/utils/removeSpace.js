@@ -1,0 +1,1 @@
+export const removeSpace = (str) => str ? str.replace(/\s+/g, '').trim().toLowerCase() : '';

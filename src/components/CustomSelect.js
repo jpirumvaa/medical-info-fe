@@ -2,7 +2,7 @@ import React from 'react'
 import { classes } from '../styles/styles'
 import { Icon } from '@iconify/react'
 
-const CustomSelect = ({ iconName, handleChange, inputName }) => {
+const CustomSelect = ({ iconName, handleChange, inputName, options }) => {
     return (
         <div>
             <div
@@ -25,10 +25,16 @@ const CustomSelect = ({ iconName, handleChange, inputName }) => {
                     style={classes.customInput}
                 >
                     <option value="">Choose role</option>
-                    <option value="admin">Admin</option>
+                    {options.map(option => (
+                        <>
+                            <option value={option.value}>{option.label}</option>
+
+                        </>
+                    ))}
+                    {/* <option value="admin">Admin</option>
                     <option value="patient">Patient</option>
                     <option value="pharmacist">Pharmacist</option>
-                    <option value="physician">Physician</option>
+                    <option value="physician">Physician</option> */}
                 </select>
             </div>
 

@@ -93,5 +93,110 @@ export const classes = {
         cursor: 'pointer',
         fontWeight: 'bold',
         marginLeft: '5px',
+    },
+    smallBtn: {
+        height: '30px',
+        marginBottom: '10px',
+        marginLeft: '16px',
+        outline: 'none',
+        border: 'none',
+        backgroundColor: '#19459D',
+        color: 'white',
+        fontSize: '15px',
+        fontWeight: 'bold',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        padding: '0 20px'
+    },
+    importbtn: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        margin: 10,
+        textTransform: "uppercase",
+        color: '#19459D',
+        cursor: 'pointer',
+        importname: {
+            font: "13px Roboto,Helvatica,Arail,sans-serif",
+        },
+    },
+    navWrapper: {
+        width: '100%',
+        height: 40,
+        backgroundColor: "#19459D",
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '10px',
+        color: 'white',
+        fontSize: '20px',
+        fontWeight: 'bold'
+    },
+    logo: {
+        width: '60%',
+        height: '60%',
+        marginLeft: '-60px',
+        cursor: 'pointer'
+    },
+    userAvatar: {
+        width: 30,
+        height: 30,
+        borderRadius: '50%',
+        marginRight: 20,
+        cursor: 'pointer'
+    },
+    radioWrapper: {
+        display: 'flex',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        margin: '-20px 40px 30px 45px',
+        flexDirection: 'column'
+    },
+    grayFont: {
+        color: colors.lightGray
+    },
+    tableTempWrapper: {
+        width: '95%',
+        margin: '30px 10px 30px 2%',
+
+    },
+    noDataWrapper: {
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    noDataImg: {
+        width: 'auto',
+        height: '70vh',
+        marginBottom: '20px'
+
+    },
+    tHeader: {
+        backgroundColor: '#19459D',
+        color: 'white',
+        fontWeight: 'boldest',
+        fontSize: '17px',
+        outline: 'none'
+    },
+    dataDashboardWrapper: {
+        width: '100%',
+        alignSelf: 'flex-start',
+    },
+    largeTitle: {
+        fontSize: '27px',
+        fontWeight: 'bold',
+        marginLeft: '20px'
+    },
+    ruler: {
+        width: '95%',
+        marginLeft: '20px',
+        marginTop: '10px',
+        marginBottom: '10px'
+    },
+    flexDisplay: {
+        display: 'flex',
+        alignItems: 'flex-start',
     }
 }

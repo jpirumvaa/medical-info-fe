@@ -26,6 +26,13 @@ const Signup = () => {
     const [phoneNumber, setPhoneNumber] = useState()
     const [age, setAge] = useState()
 
+    const options = [
+        { value: 'admin', label: 'Admin' },
+        { value: 'patient', label: 'Patient' },
+        { value: 'pharmacist', label: 'Pharmacist' },
+        { value: 'physician', label: 'Physician' },
+
+    ]
 
     const handleEmailChange = e => setEmail(e.target.value)
     const handlePasswordChange = e => setPassword(e.target.value)
@@ -50,17 +57,19 @@ const Signup = () => {
             age,
             phoneNumber,
             sex,
-            usertype
+            usertype: usertype.toLowerCase()
         }
         for (var property in data) {
             formData.push(`${property}=${data[property]}`);
         }
         formData = formData.join("&");
-        if (password === confirmPassword) {
-            dispatch(signup(formData, history))
-        }
-        else {
+
+        if (password !== confirmPassword) {
             alert("Passwords do not match")
+        } else if (usertype === '') {
+            alert('Please select the role')
+        } else {
+            dispatch(signup(formData, history))
         }
     }
 
@@ -68,6 +77,7 @@ const Signup = () => {
 
     return (
         <div
+            className='form-wrapper'
             style={classes.formWrapper}
         >
             <FormTemplate
@@ -93,9 +103,10 @@ const Signup = () => {
                     handleChange={handleLastnameChange}
                 />
                 <CustomSelect
-                    iconName={"mdi:account"}
-                    inputName={"Confirm Password"}
+                    iconName={"majesticons:users"}
+                    inputName={"User Type"}
                     handleChange={handleUserTypeChange}
+                    options={options}
                 />
                 <CustomInput
                     iconName={"mdi:account"}
@@ -103,41 +114,46 @@ const Signup = () => {
                     handleChange={handleUsernameChange}
                 />
                 <CustomInput
-                    iconName={"mdi:account"}
+                    iconName={"ant-design:calendar-filled"}
                     inputName={"Age"}
                     handleChange={handleAgeChange}
                 />
                 <CustomInput
-                    iconName={"mdi:account"}
+                    iconName={"bxs:phone"}
                     inputName={"Phone Number"}
                     handleChange={handlePhoneNumberChange}
                 />
                 <CustomInput
                     iconName={"bx:bxs-lock-alt"}
                     inputName={"Password"}
+                    inputType='password'
                     handleChange={handlePasswordChange}
                 />
                 <CustomInput
                     iconName={"bx:bxs-lock-alt"}
                     inputName={"Confirm Password"}
+                    inputType='password'
                     handleChange={handleConfirmPassword}
                 />
                 <CustomRadio
                     handleChange={handleGenderChange}
+                    name="gender"
+                    options={[
+                        { name: "Male", value: "male" },
+                        { name: "Female", value: "female" }
+                    ]}
                 />
-
                 <CustomCheckbox
                     text={"I agree with terms and conditions"}
                 />
                 <CustomCheckbox
                     text={"I want to receive the newsletter"}
                 />
-
             </FormTemplate>
             <div
                 style={classes.signupIntro}
             >
-                <p>Registered?
+                <p>Already have an 	account?
                     <span
                         class='linkbtn'
                         onClick={navigateToLogin}

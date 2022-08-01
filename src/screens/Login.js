@@ -35,6 +35,7 @@ const Login = () => {
     const navigateToSignup = () => history('/signup')
     return (
         <div
+            className='form-wrapper'
             style={classes.formWrapper}
         >
             <FormTemplate

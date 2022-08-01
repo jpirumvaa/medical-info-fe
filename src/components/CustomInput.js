@@ -2,7 +2,7 @@ import React from 'react'
 import { Icon } from '@iconify/react';
 import { classes } from '../styles/styles';
 
-const CustomInput = ({ iconName, inputName, handleChange }) => {
+const CustomInput = ({ iconName, inputName, handleChange, inputType }) => {
     return (
         <div>
             <div
@@ -18,7 +18,7 @@ const CustomInput = ({ iconName, inputName, handleChange }) => {
                 </div>
                 <input
                     onChange={handleChange}
-                    type="text"
+                    type={inputType ? inputType : 'text'}
                     placeholder={inputName}
                     name={inputName.toLowerCase()}
                     style={classes.customInput}

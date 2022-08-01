@@ -1,20 +1,17 @@
 import React from 'react'
+import { classes } from '../styles/styles'
 
-const CustomRadio = ({ handleChange }) => {
+const CustomRadio = ({ handleChange, name, options }) => {
     return (
-        <div style={{
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'flex-start',
-            margin: '-20px 40px 30px 45px',
-            flexDirection: 'column'
-        }}>
-            <p style={{ color: 'gray' }}>Select gender</p>
+        <div style={classes.radioWrapper}>
+            <p style={classes.grayFont}>Select {name}</p>
             <div>
-                <input type="radio" id="html" name="gender" onClick={() => handleChange("male")} value="male" />
-                <label for="html">Male</label>
-                <input type="radio" id="css" name="gender" onClick={() => handleChange("female")} value="female" />
-                <label for="css">Female</label><br></br>
+                {options.map(option => (
+                    <>
+                        <input type="radio" id="html" name={name} onClick={() => handleChange(option.value)} value={option.value} />
+                        <label for="html">{option.name}</label>
+                    </>
+                ))}
             </div>
 
         </div>

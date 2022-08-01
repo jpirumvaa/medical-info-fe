@@ -5,9 +5,8 @@ export const login = (data, history) => dispatch => {
     dispatch({ type: types.AUTH_LOADING });
     return http.post("/login", data)
         .then(res => {
-            // console.log("The response from login is:", res)
             if (res.data.status === 200) {
-                document.cookie = `token=${res.data.data}`
+                sessionStorage.setItem("token", res.data.data);
                 dispatch({
                     type: types.LOGIN_SUCCESS,
                     authToken: res.data.data,
@@ -26,7 +25,6 @@ export const login = (data, history) => dispatch => {
             dispatch({
                 type: types.LOGIN_ERROR,
                 error: err
-                // payload: err.data.message ? err.data.message : "Error occured"
             })
         })
 }
@@ -39,14 +37,12 @@ export const signup = (data, history) => dispatch => {
                 type: types.SIGNUP_SUCCESS,
                 user: res.data,
                 message: res.message
-                // authToken: res.data
             });
         })
         .catch(err => {
             dispatch({
                 type: types.SIGNUP_ERROR,
                 error: err
-                // payload: err.data.message ? err.data.message : "Error occured"
             })
         })
 }

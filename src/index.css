@@ -1,18 +1,14 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
+:root {
+  --main-bg-color: #dddddd;
+}
 
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  /* font-family: 'Roboto', sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 input:focus {
@@ -29,18 +25,38 @@ select:focus {
 }
 
 table {
-  font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
 td,
 th {
-  border: 1px solid #dddddd;
   text-align: left;
-  padding: 8px;
+  padding: 10px;
+}
+
+td {
+  border: 1px solid var(--main-bg-color);
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: var(--main-bg-color);
+}
+
+@media screen and (max-width: 908px) {
+  .form-wrapper {
+    width: 60% !important
+  }
+}
+
+@media screen and (max-width: 627px) {
+  .form-wrapper {
+    width: 80% !important
+  }
+}
+
+@media screen and (max-width: 448px) {
+  .form-wrapper {
+    width: 90% !important
+  }
 }
