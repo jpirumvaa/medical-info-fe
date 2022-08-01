@@ -3,10 +3,13 @@ import { colors } from './colors'
 export const classes = {
     appContainer: {
         backgroundColor: "#F4F4F5",
-        height: "100vh",
+        height: "100%",
+        minHeight: "100vh",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        width: '100%'
+
     },
     formTitle: {
         fontSize: 30,

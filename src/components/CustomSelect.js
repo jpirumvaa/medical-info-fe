@@ -17,26 +17,19 @@ const CustomSelect = ({ iconName, handleChange, inputName }) => {
                     />
                 </div>
                 <select
-                    id="cars"
+                    id="usertype"
                     onChange={handleChange}
                     type="text"
                     placeholder={inputName}
                     name={inputName.toLowerCase()}
                     style={classes.customInput}
                 >
-                    <option value="" style={{ color: 'gray' }}>Choose role</option>
-                    <option value="volvo">Admin</option>
-                    <option value="saab">Patient</option>
-                    <option value="mercedes">Pharmacist</option>
-                    <option value="audi">Physician</option>
+                    <option value="">Choose role</option>
+                    <option value="admin">Admin</option>
+                    <option value="patient">Patient</option>
+                    <option value="pharmacist">Pharmacist</option>
+                    <option value="physician">Physician</option>
                 </select>
-                {/* <input
-                    onChange={handleChange}
-                    type="text"
-                    placeholder={inputName}
-                    name={inputName.toLowerCase()}
-                    style={classes.customInput}
-                /> */}
             </div>
 
         </div>
