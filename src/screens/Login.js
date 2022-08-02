@@ -54,6 +54,7 @@ const Login = () => {
                     iconName={"bx:bxs-lock-alt"}
                     inputName={"Password"}
                     handleChange={handlePasswordChange}
+                    inputType='password'
                 />
                 <CustomCheckbox
                     text={"Remember me"}

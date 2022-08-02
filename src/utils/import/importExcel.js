@@ -62,7 +62,7 @@ export const importExcel = (file, setUpload, setTableRows, setTableColomns, setT
         const headers = header.map(head => head.toUpperCase())
         excelData.splice(0, 1)
         data = headers
-        setTableColomns(headers)
+        setTableColomns(data)
         setTableRows(convertDataToJson(header, excelData))
     }
 }
